@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Game changer-Straw Dogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RWRMDA算法改良
+昨天看到一篇关于miRNA prediction的文章，还是made in China。就拿来看了看，其中他所用到的方法是random walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。miRNA可以看作我们之前介绍的regularity network中的node角色，其中link的关系是根据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Game changer-Straw Dogs">
+<meta property="og:url" content="http://yoursite.com/2017/02/10/RWRMDA算法改良/index.html">
+<meta property="og:site_name" content="Game changer-Straw Dogs">
+<meta property="og:description" content="RWRMDA算法改良
+昨天看到一篇关于miRNA prediction的文章，还是made in China。就拿来看了看，其中他所用到的方法是random walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。miRNA可以看作我们之前介绍的regularity network中的node角色，其中link的关系是根据">
+<meta property="og:image" content="http://a2.qpic.cn/psb?/V11iRAek2wBOk9/8*RryWY8*2Anwgb5w5gSQDHvV8F.z03xr5htv8mdF18!/b/dN8AAAAAAAAA&bo=BgMsAgAAAAAFBw8!&rf=viewer_4">
+<meta property="og:updated_time" content="2017-02-09T16:56:10.039Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Game changer-Straw Dogs">
+<meta name="twitter:description" content="RWRMDA算法改良
+昨天看到一篇关于miRNA prediction的文章，还是made in China。就拿来看了看，其中他所用到的方法是random walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。miRNA可以看作我们之前介绍的regularity network中的node角色，其中link的关系是根据">
+<meta name="twitter:image" content="http://a2.qpic.cn/psb?/V11iRAek2wBOk9/8*RryWY8*2Anwgb5w5gSQDHvV8F.z03xr5htv8mdF18!/b/dN8AAAAAAAAA&bo=BgMsAgAAAAAFBw8!&rf=viewer_4">
+  
+    <link rel="alternate" href="/atom.xml" title="Game changer-Straw Dogs" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Game changer-Straw Dogs</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Time management, learning management, self-control</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-RWRMDA算法改良" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/10/RWRMDA算法改良/" class="article-date">
+  <time datetime="2017-02-09T16:56:09.970Z" itemprop="datePublished">2017-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RWRMDA算法改良"><a href="#RWRMDA算法改良" class="headerlink" title="RWRMDA算法改良"></a>RWRMDA算法改良</h1><hr>
+<h4 id="昨天看到一篇关于miRNA-prediction的文章，还是made-in-China。就拿来看了看，其中他所用到的方法是random-walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。"><a href="#昨天看到一篇关于miRNA-prediction的文章，还是made-in-China。就拿来看了看，其中他所用到的方法是random-walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。" class="headerlink" title="昨天看到一篇关于miRNA prediction的文章，还是made in China。就拿来看了看，其中他所用到的方法是random walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。"></a>昨天看到一篇关于miRNA prediction的文章，还是made in China。就拿来看了看，其中他所用到的方法是random walk去detect出对应的miRNA，假如结果不存在问题，不存在数据捏造的情况下，准确率还是非常高的。先简要讲一下他用到的方法。</h4><p>miRNA可以看作我们之前介绍的regularity network中的node角色，其中link的关系是根据不同miRNA对某个疾病（癌症）产生控制作用，存在表达量相关的情况从而建立起不同miRNA之间的联系。<br>因而，我们可以将这种联系抽象的理解为“信息的游走”，在也就是说在某个初始状态下，随着miRNA相互之间建立联系的过程的推进，最终形成一个稳定的网络状态。通俗的讲，虽说是random walk，但其实用到的根本方法应该是马尔科夫链，先亮一下paper中的model figure。<br><img src="http://a2.qpic.cn/psb?/V11iRAek2wBOk9/8*RryWY8*2Anwgb5w5gSQDHvV8F.z03xr5htv8mdF18!/b/dN8AAAAAAAAA&amp;bo=BgMsAgAAAAAFBw8!&amp;rf=viewer_4" alt=""><br>我简要解释一下这幅图的意义：<br>1.对于某个疾病，已经知道n个miRNA和该疾病存在调节关系，可以将这n个miRNA作为seed node以进行随机游走，接着我们挑出备选的candidate miRNA和之前的seed node一起作为最终构成调节网络的node群体。同时将对应每个node包含的调节信息进行假设，seed node每个信息量假设相同（均匀分配），而未知的node则设为0。我们将初始的信息矩阵设为p(0)。<br>2.接着通过转移矩阵W进行每个node之间的信息转移，最蛋疼的就是，paper中没有给出它的similarity的计算方法（可以用皮尔逊系数矩阵，但其实对于计算miRNA similarity很多文章给了不同的方法，以后有时间一一赘述）。<br>3.经过若干步迭代后，最终形成稳定的分布，除去seed node，根据candidate nodes的score进行降序排列，取top50，根据现有的数据库和文献进行结果比对。<br>这篇paper还给自己的model美名其曰<strong>RWRMDA（Random walk with restart for MiRNA–disease association）</strong>，里面还说给了R和matlab的相关代码包，结果文章的链接竟然是没用的……于是只好自己写了R，程序如下。  </p>
+<pre><code>start_ vector &lt;- read.csv(&quot;C:/users/user/desktop/start_vector.csv&quot;,header=F)  # 输入初始向量  
+transform_matrix &lt;- read.csv(&quot;C:/users/user/desktop/transform_matrix.csv&quot;,header=F) # 输入转移矩阵
+start_vector &lt;- as.matrix(start_vector)
+transform_matrix &lt;- as.matrix(transform_matrix)
+r &lt;- 0.2 # 设置restart值
+beta &lt;- 3 # 设置power值，这里可以调节
+transform_matrix &lt;- transform_matrix^beta
+marker_vector &lt;- matrix(rep(1,271),1,271) # 设置标记向量
+media_matrix &lt;- rbind(marker_vector, transform_matrix[,1]/sum(transform_matrix[,1]))
+i &lt;- 2
+repeat{
+if(i&gt;271){
+ break
+}
+ media_matrix &lt;- rbind(media_matrix, transform_matrix[,i]/sum(transform_matrix[,i]))
+i &lt;- i+1
+}  # 对转移矩阵的纵方向进行标准化
+transform_matrix &lt;- t(media_matrix[-1,]) # 最终转移矩阵
+second_vector &lt;- (1-r)*transform_matrix%*%start_vector+r*start_vector # 第一次信息（概率）转移
+first_vector &lt;- start_vector
+caculate_matrix &lt;- cbind(first_vector, second_vector)
+caculate_matrix &lt;- t(caculate_matrix) # 构建距离计算矩阵
+distance &lt;- dist(caculate_matrix, &quot;manhattan&quot;) # 计算曼哈顿距离，也就是L1范数
+distance &lt;- as.vector(distance)
+repeat{
+if(distance &lt; 10^-6){
+break
+} # 当相邻的一组状态向量之间的距离小于10^-6时终止循环
+first_vector &lt;- second_vector
+second_vector &lt;- (1-r)*transform_matrix%*%first_vector+r*start_vector
+caculate_matrix &lt;- cbind(first_vector, second_vector) 
+caculate_matrix &lt;- t(caculate_matrix)
+distance &lt;- dist(caculate_matrix, &quot;manhattan&quot;)
+distance &lt;- as.vector(distance)
+} #循环结束，最终的状态向量为second_vector
+result &lt;- order(-second_vector)
+write.csv(result,&quot;final3.csv&quot;) #写入，保存
+</code></pre><p>也许会好奇为啥我贴了beta这个变量，听我慢慢解释。<br>在原先的论文中，paper并没有给出它的similarity具体的计算方法，但是从它给出的module figure而言，虽然体现了scale-free network性质，但是整体的网络框架仍然不明显。于是我想到，根据WGCNA中提出的利用软阈值的方法，于是我就将原先的similarity的值通过power函数映射到新的值上，对原先的算法进行改进，实验的结果如下。<br><strong>Target disease：lung cancer</strong><br><strong>Beta=2，result：</strong><br>1.相比于beta=1时的情况beta=2并没有筛选掉beta=1未能过滤的和Lung Neoplasms无关的miRNA，准确率下降了4个百分点。<br>2.同比于beta=1，筛选出了影响Lung Neoplasms的新的miRNA（hsa-mir-99b）Evidence：hsa-mir-99b和非小细胞肺癌、腺癌和鳞状上皮细胞癌上的表达和正常组织有所不同。<br>3.不同miRNA的rank position并未发生太大变化。<br><strong>Beta=3，result：</strong><br>1.相比于beta=1的情况，准确率下降了百分之六，同时没能过滤beta=1中和Lung Neoplasms无关的miRNA。<br>2.相比于beta=2，call出了新的miRNA（hsa-mir-100）Gao W et al<br>3.相比于beta=1，beta=2的情况我发现，对于beta=1中被filiter出22号和127号miRNA在随着beta上升的情况时rank position越来越低  ，且下降速度很快<br>4.对于miRNA，我们只能说明某个miRNA和disease存在关系，并没有证明完全没有关系的实验以及数据，因此对于被筛选出的结果，只是在先验知识中并没有记录说明这些miRNA和lung cancer存在联系。因而被filiter的结果也有可能是正确的<br>所以我觉得，对于rank position迅速下降的candidate miRNA更印证了他们和肺癌的关系不大。<br>对于这个想法我觉得可操作性是比较强的，因为我没有看懂WGCNA的源码，所以今后会对我提出的改进算法做进一步的修改，去寻找一个最适的beta值对miRNA进行预测。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/10/RWRMDA算法改良/" data-id="ciyymo7420002kwux4q6nwdqd" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/07/network 学习笔记2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/10/RWRMDA算法改良/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/07/network 学习笔记2/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/network 学习笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/26/hello-world/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
